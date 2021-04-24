@@ -8,7 +8,7 @@ numOfLetters = int(input("How many letter would you like?\n"))
 numOfSymbols = int(input(f"How many symbols would you like?\n"))
 numOfNumbers = int(input(f"How many numbers would you like?\n"))
 
-generatedPassword = ""
+generatedPassword = []
 
 # randomly selects letters, symbols, and numbers and places it into one string
 for x in range(numOfLetters):
@@ -20,9 +20,8 @@ for y in range(numOfSymbols):
 for z in range(numOfNumbers):
     generatedPassword += random.choice(numbers)
 
-# change string to a list to then shuffle to display a randomly generated password
-l = list(generatedPassword)
-random.shuffle(l)
-generatedPassword = ''.join(l)
+# shuffles list to display a randomly generated password
+random.shuffle(generatedPassword)
+finalPassword = ''.join(generatedPassword)
 
-print(generatedPassword)
+print(finalPassword)
